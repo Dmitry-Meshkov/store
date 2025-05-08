@@ -1,8 +1,11 @@
+using Store;
+using Store.Memory;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddSingleton<IBookRepository, BookRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
